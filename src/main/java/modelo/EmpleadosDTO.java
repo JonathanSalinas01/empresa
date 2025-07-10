@@ -37,4 +37,14 @@ public class EmpleadosDTO {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "EmpleadosDTO{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", fechaContratacion='" + fechaContratacion + '\'' +
+                ", idDepartamento='" + idDepartamento + '\'' +
+                '}';
+    }
 }
