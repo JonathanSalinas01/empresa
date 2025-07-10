@@ -1,14 +1,16 @@
+import controlador.DepartamentoDAO;
+import modelo.DepartamentosDTO;
 import modelo.Uconnection;
 
 import java.sql.Connection;
+import java.util.Collection;
 
 public class Main {
     public static void main(String[] args) {
-        Connection conn = Uconnection.getConnection();
-        if(conn != null){
-            System.out.println("conexion establecida!");
-        }else{
-            System.out.println("Hubo un error al conectar a la base datos");
+        DepartamentoDAO departamentos = new DepartamentoDAO();
+        Collection<DepartamentosDTO> coleccion = departamentos.obtenerDepartamentos();
+        for(DepartamentosDTO dep : coleccion){
+            System.out.println(dep);
         }
     }
 }
