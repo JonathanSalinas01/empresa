@@ -18,7 +18,7 @@ public class EmpleadosDAO {
 
         try {
             conn = Uconnection.getConnection();
-            String sql = "SELECT id_empleados, nombre, fecha_contratacion FROM empleados WHERE id_departamentos = ?";
+            String sql = "SELECT id_empleados, nombre, fecha_contratación FROM empleados WHERE departamentos_id_departamentos = ?";
             pst = conn.prepareStatement(sql);
             pst.setInt(1, departamento);
             rs = pst.executeQuery();
@@ -29,7 +29,7 @@ public class EmpleadosDAO {
                 EmpleadosDTO empleado = new EmpleadosDTO();
                 empleado.setId(rs.getInt("id_empleados"));
                 empleado.setNombre(rs.getString("nombre"));
-                empleado.setFechaContratacion(rs.getString("fecha_contratacion"));
+                empleado.setFechaContratacion(rs.getString("fecha_contratación"));
                 empleados.add(empleado);
             }
 
